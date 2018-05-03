@@ -9,6 +9,6 @@
 ## Canvas事件响应
 
 ## demo 截图
-
+![](https://github.com/liweijieok/CanvasDemo/blob/master/screenshots.png)
 ## 参考博客+推荐阅读
 [GAStudio](https://blog.csdn.net/tianjian4592/article/details/45234419)
