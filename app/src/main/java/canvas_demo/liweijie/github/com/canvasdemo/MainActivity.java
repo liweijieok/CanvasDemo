@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void scale(View view) {
-
+    startActivity(new Intent(this, CanvasScaleActivity.class));
   }
 
   public void clip(View view) {
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void rotate(View view) {
-
+    startActivity(new Intent(this, CanvasRotateActivity.class));
   }
 
   public void saveAndRestore(View view) {

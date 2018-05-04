@@ -16,7 +16,9 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-    <activity android:name=".CanvasTranslateActivity"/>
+    <activity android:name=".CanvasTranslateActivity" android:label="Translate"/>
+    <activity android:name=".CanvasScaleActivity" android:label="Scale"/>
+    <activity android:name=".CanvasRotateActivity" android:label="Rotate"/>
   </application>
 
 </manifest>

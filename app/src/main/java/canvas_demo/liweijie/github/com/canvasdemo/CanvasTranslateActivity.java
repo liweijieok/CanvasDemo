@@ -9,12 +9,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 
 /**
  * @author liweijie
  * create on 2018/5/3.
- * email:liweijie@aiyappp.com
+ * email:liweijieok@qq.com
  * desc:
  * lastModify:
  */
@@ -31,7 +32,7 @@ public class CanvasTranslateActivity extends AppCompatActivity {
  */
 class TranslateView extends View {
   private Paint mPaint;
-
+  private static final String TAG = "TranslateView";
   public TranslateView(Context context) {
     super(context);
     mPaint = new Paint();
@@ -40,6 +41,10 @@ class TranslateView extends View {
     mPaint.setAntiAlias(true);
   }
 
+  /**
+   * 调用translate不影响canvas的高度+宽度
+   * @param canvas
+   */
   @Override protected void onDraw(Canvas canvas) {
     super.onDraw(canvas);
     canvas.drawColor(Color.WHITE);
@@ -47,8 +52,10 @@ class TranslateView extends View {
     //默认顶点0,0
     canvas.drawRect(new RectF(0, 0, 100, 100), mPaint);
     //把顶点往下移动100px,往右移动100px,
+    Log.i(TAG, "canvas before translate width = "+canvas.getWidth());
     canvas.save();//保存一个状态
     canvas.translate(100, 100);
+    Log.i(TAG, "canvas alter translate width = "+canvas.getWidth());
     mPaint.setColor(Color.BLACK);
     canvas.drawRect(new RectF(0, 0, 100, 100), mPaint);
     canvas.restore();//恢复，使得translate失效，重新定位顶点为0,0
