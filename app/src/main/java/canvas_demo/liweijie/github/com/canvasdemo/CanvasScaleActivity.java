@@ -39,6 +39,7 @@ class ScaleView extends View {
     super(context);
     mPaint = new Paint();
     mPaint.setAntiAlias(true);
+    mPaint.setStrokeWidth(4);
   }
 
   /**
@@ -53,22 +54,37 @@ class ScaleView extends View {
    */
   @Override protected void onDraw(Canvas canvas) {
     super.onDraw(canvas);
-    Log.i(TAG, "canvas before scale width = "+canvas.getWidth());
+    Log.i(TAG, "canvas before scale width = " + canvas.getWidth());
+    canvas.drawColor(Color.WHITE);
     mPaint.setColor(Color.BLUE);
-    canvas.drawRect(new RectF(0,0,getWidth(),getHeight()),mPaint );
+    canvas.drawRect(new RectF(0, 0, 200, 200), mPaint);
     canvas.save();
     //没有制定以那点为中心进行缩放
-    canvas.scale(0.5f,0.5f);
+    canvas.scale(0.5f, 0.5f);
     mPaint.setColor(Color.RED);
-    canvas.drawRect(new RectF(0,0,getWidth(),getHeight()),mPaint );
-    Log.i(TAG,"canvas after scale width = "+canvas.getWidth());
+    canvas.drawRect(new RectF(0, 0, 200, 200), mPaint);
+    Log.i(TAG, "canvas after scale width = " + canvas.getWidth());
     canvas.restore();
 
     canvas.save();
-    canvas.scale(0.5f,0.5f,300f,300f);
+    canvas.scale(0.5f, 0.5f, 200, 0f);
     mPaint.setColor(Color.GREEN);
-    canvas.drawRect(new RectF(0,0,getWidth(),getHeight()),mPaint );
+    canvas.drawRect(new RectF(0, 0, 200, 200), mPaint);
     canvas.restore();
 
+    //画一个以目前最短变为准的四边形
+    float sideWidth = getWidth();
+    float top = getHeight() - sideWidth;
+    //矩形
+    RectF rectF = new RectF(0, 0, sideWidth, sideWidth);
+    mPaint.setColor(Color.BLACK);
+    mPaint.setStyle(Paint.Style.STROKE);
+    for (int i = 0; i <= 20; i++) {
+      canvas.save();
+      canvas.translate(0,top);
+      canvas.scale((float) i / 20, i / 20f,sideWidth/2,sideWidth/2);
+      canvas.drawRect(rectF, mPaint);
+      canvas.restore();
+    }
   }
 }

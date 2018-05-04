@@ -20,12 +20,16 @@ public class MainActivity extends AppCompatActivity {
     startActivity(new Intent(this, CanvasScaleActivity.class));
   }
 
-  public void clip(View view) {
+  public void rotate(View view) {
+    startActivity(new Intent(this, CanvasRotateActivity.class));
+  }
+
+  public void skew(View view) {
 
   }
 
-  public void rotate(View view) {
-    startActivity(new Intent(this, CanvasRotateActivity.class));
+  public void clip(View view) {
+
   }
 
   public void saveAndRestore(View view) {
