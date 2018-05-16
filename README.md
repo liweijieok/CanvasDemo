@@ -12,3 +12,6 @@
 ![](https://github.com/liweijieok/CanvasDemo/blob/master/screenshots.png)
 ## 参考博客+推荐阅读
 [GAStudio](https://blog.csdn.net/tianjian4592/article/details/45234419)
+
+## Apk体验
+[Apk](https://github.com/liweijieok/CanvasDemo/blob/master/app-debug.apk)
