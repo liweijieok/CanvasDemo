@@ -19,6 +19,9 @@
     <activity android:name=".CanvasTranslateActivity" android:label="Translate"/>
     <activity android:name=".CanvasScaleActivity" android:label="Scale"/>
     <activity android:name=".CanvasRotateActivity" android:label="Rotate"/>
+    <activity android:name=".CanvasSkewActivity" android:label="Skew"/>
+    <activity android:name=".CanvasSaveAndRestoreActivity" android:label="SaveAndRestore"/>
+    <activity android:name=".CanvasClipActivity" android:label="Clip"/>
   </application>
 
 </manifest>

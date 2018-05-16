@@ -25,15 +25,15 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void skew(View view) {
-
+    startActivity(new Intent(this, CanvasSkewActivity.class));
   }
 
   public void clip(View view) {
-
+    startActivity(new Intent(this, CanvasClipActivity.class));
   }
 
   public void saveAndRestore(View view) {
-
+    startActivity(new Intent(this, CanvasSaveAndRestoreActivity.class));
   }
 
   public void draw(View view) {
